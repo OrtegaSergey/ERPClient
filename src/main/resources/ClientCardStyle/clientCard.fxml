@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<?import jfxtras.scene.control.CalendarTimePicker?>
+<?import jfxtras.scene.control.CalendarTimeTextField?>
+<?import jfxtras.scene.control.CalendarPicker?>
+<VBox spacing="10" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="DesktopClient.Controllers.ClientCardController" fx:id="mainCardVBox">
+    <stylesheets>
+        <URL value="@cardStyle.css"/>
+    </stylesheets>
+            <HBox spacing="5" fx:id="topInfoHBox">
+                <VBox HBox.hgrow="ALWAYS" alignment="TOP_CENTER" spacing="2">
+                    <Label text="id" id="label"/>
+                    <Label id="text" fx:id="idLabel"/>
+                </VBox>
+                <VBox HBox.hgrow="ALWAYS" alignment="TOP_CENTER" spacing="2">
+                    <Label text="Создана" id="label"/>
+                    <Label id="text" fx:id="createdLabel"/>
+                </VBox>
+                <VBox HBox.hgrow="ALWAYS" alignment="TOP_CENTER" spacing="2">
+                    <Label text="Создал" id="label"/>
+                    <Label id="text" fx:id="createdByLabel"/>
+                </VBox>
+                <VBox HBox.hgrow="ALWAYS" alignment="TOP_CENTER" spacing="2">
+                    <Label text="В архиве" id="label"/>
+                    <Label id="text" fx:id="archivedLabel"/>
+                </VBox>
+            </HBox>
+            <HBox spacing="5">
+            <VBox minWidth="400" HBox.hgrow="ALWAYS">
+                <Label text="ФИО" id="label"/>
+                <TextField id="text" fx:id="nameTextField"/>
+            </VBox>
+            <VBox minWidth="150" HBox.hgrow="ALWAYS">
+                <Label text="Телефон" id="label"/>
+                <TextField id="text" fx:id="phoneTextField"/>
+            </VBox>
+            </HBox>
+            <HBox spacing="5">
+                <VBox minWidth="400" HBox.hgrow="ALWAYS">
+                    <Label text="Адрес" id="label"/>
+                    <TextField  id="text" fx:id="addressTextField"/>
+                </VBox>
+                <VBox minWidth="150" HBox.hgrow="ALWAYS">
+                    <Label text="E-mail" id="label"/>
+                    <TextField id="text" fx:id="emailTextField"/>
+                </VBox>
+            </HBox>
+            <HBox spacing="5">
+                <VBox prefWidth="295">
+                    <Label text="Отдел" id="label"/>
+                    <MenuButton maxWidth="Infinity" id="text" fx:id="branchMenuButton"/>
+                </VBox>
+                <VBox prefWidth="200">
+                    <Label text="Дата" id="label"/>
+                    <DatePicker editable="false" id="text" fx:id="agreedDatePicker"/>
+                </VBox>
+                <VBox prefWidth="200">
+                    <Label text="Время" id="label"/>
+                    <HBox VBox.vgrow="ALWAYS">
+                        <ChoiceBox maxHeight="Infinity" maxWidth="50" fx:id="hourButton" HBox.hgrow="ALWAYS" id="label"/>
+                        <Label text=" : " VBox.vgrow="ALWAYS" id="label"/>
+                        <ChoiceBox maxHeight="Infinity" maxWidth="50" fx:id="minuteButton" HBox.hgrow="ALWAYS" id="label"/>
+                        <Button text="x" fx:id="clearDateTimeButton" VBox.vgrow="ALWAYS" maxHeight="Infinity" onAction="#clearDateTime"/>
+                        <ToggleButton text="alert" fx:id="alertToggleButton" HBox.hgrow="ALWAYS" maxHeight="Infinity"/>
+                    </HBox>
+                </VBox>
+            </HBox>
+        <AnchorPane maxWidth="Infinity">
+            <ListView maxWidth="Infinity" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" id="text" fx:id="commentsListView"  VBox.vgrow="ALWAYS"/>
+        </AnchorPane>
+        <AnchorPane>
+            <HBox fx:id="commentLineHBox" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0">
+                <TextField fx:id="commentLineTextField" id="text" HBox.hgrow="ALWAYS" onAction="#addComment"/>
+                <Button maxHeight="Infinity" fx:id="commentButton" text="Добавить" id="label" prefWidth="200" onAction="#addComment" disable="true"/>
+            </HBox>
+        </AnchorPane>
+        <HBox alignment="TOP_RIGHT">
+            <Button prefWidth="200" text="В архив"  id="label" fx:id="toArchiveButton" onAction="#archiveClient"/>
+            <Button prefWidth="200" text="Из архива" id="label" fx:id="fromArchiveButton" onAction="#unzipClient" visible="false" managed="false"/>
+            <Button prefWidth="200" text="Вложения" id="label" fx:id="attachment" onAction="#attachment" disable="true"/>
+            <Button prefWidth="200" text="Сохранить" id="label" fx:id="saveClientButton" onAction="#saveClientCard"/>
+        </HBox>
+    </VBox>

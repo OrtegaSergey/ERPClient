@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+      fx:controller="DesktopClient.Controllers.MainController" fx:id="mainWindow">
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+
+    <!--Верхняя панель с кнопкой "закрыть"-->
+    <HBox id="topControlPanel" alignment="TOP_RIGHT" maxHeight="20" VBox.vgrow="ALWAYS">
+        <Button id="closeButton" maxWidth="80" minWidth="80" onAction="#closeProgram" text="close"/>
+    </HBox>
+
+    <!--Всё окно, кроме верхней полосы-->
+    <BorderPane fx:id="mainBorderPane" VBox.vgrow="ALWAYS" visible="false" managed="false">
+        <!--Левое окно-->
+        <left>
+            <!--Левая часть меню (вертикальый список кнопок)-->
+        </left>
+        <center>
+            <!--TableView с клиентами, потом меняется на карту клиента или ещё на что-то-->
+        </center>
+    </BorderPane>
+
+    <!--Панель регистрации-->
+    <BorderPane fx:id="registrationPanel" VBox.vgrow="ALWAYS" visible="false" managed="false">
+        <center>
+            <VBox alignment="CENTER" maxHeight="160">
+                <HBox alignment="CENTER" maxHeight="40">
+                    <TextField fx:id="registrationNameField" promptText="Введите имя"
+                               onAction="#switchFocusToLoginField" minWidth="300" prefWidth="300" maxWidth="300"/>
+                </HBox>
+                <HBox alignment="CENTER" maxHeight="40">
+                    <TextField fx:id="registrationLoginField" promptText="Логин" onAction="#switchFocusToPassField"
+                               minWidth="300" prefWidth="300" maxWidth="300"/>
+                </HBox>
+                <HBox alignment="CENTER" maxHeight="40">
+                    <PasswordField fx:id="registrationPasswordField" promptText="Введите пароль"
+                                   onAction="#switchFocusToPassRepeatField" minWidth="150" prefWidth="150"
+                                   maxWidth="150"/>
+                    <PasswordField fx:id="registrationPasswordRepeatField" promptText="Повторите пароль"
+                                   onAction="#registration" minWidth="150" prefWidth="150" maxWidth="150"/>
+                </HBox>
+                <HBox alignment="CENTER" maxHeight="40">
+                    <Button fx:id="registrationButton" text="Зарегистрироваться" onAction="#registration" minWidth="150"
+                            prefWidth="150" maxWidth="150"/>
+                    <Button fx:id="backRegistrationButton" text="Назад" onAction="#authWindow" minWidth="150"
+                            prefWidth="150" maxWidth="150"/>
+                </HBox>
+                <Label fx:id="alertRegistrationLabel" minWidth="300" prefWidth="300" maxWidth="300"
+                       textAlignment="CENTER"/>
+            </VBox>
+        </center>
+    </BorderPane>
+
+    <!--Панель авторизации-->
+    <BorderPane fx:id="authPanel" VBox.vgrow="ALWAYS">
+        <center>
+            <VBox alignment="CENTER" maxHeight="160">
+                <HBox alignment="CENTER" maxHeight="40">
+                    <TextField fx:id="authLoginField" promptText="Логин" onAction="#switchFocusToPassField"
+                               minWidth="300" prefWidth="300" maxWidth="300"/>
+                </HBox>
+                <HBox alignment="CENTER" maxHeight="40">
+                    <PasswordField fx:id="authPasswordField" promptText="Пароль" onAction="#tryToAuth" minWidth="300"
+                                   prefWidth="300" maxWidth="300"/>
+                </HBox>
+                <HBox alignment="CENTER" maxHeight="40">
+                    <Button fx:id="authButton" text="Войти" onAction="#tryToAuth" minWidth="150" prefWidth="150"
+                            maxWidth="150"/>
+                    <Button fx:id="authRegisterButton" text="Регистрация" onAction="#registrationWindow" minWidth="150"
+                            prefWidth="150" maxWidth="150"/>
+                </HBox>
+                <Label fx:id="alertAuthLabel" minWidth="300" prefWidth="300" maxWidth="300" alignment="CENTER"/>
+            </VBox>
+        </center>
+    </BorderPane>
+
+
+</VBox>

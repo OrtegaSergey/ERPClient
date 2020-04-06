@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="DesktopClient.Controllers.VerticalMenuController" maxWidth="250">
+    <stylesheets>
+        <URL value="@menuStyle.css"/>
+    </stylesheets>
+    <VBox fx:id="leftMenuVBox" alignment="TOP_CENTER" spacing="5" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0">
+
+        <MenuBar id="menu" VBox.vgrow="ALWAYS">
+            <Menu text="Меню" disable="true"/>
+            <Menu text="Правка" disable="true"/>
+            <Menu text="Инфо" disable="true"/>
+            <Menu text="Выход" disable="true"/>
+        </MenuBar>
+
+        <AnchorPane>
+            <Button text="Добавить клиента" AnchorPane.leftAnchor="3" AnchorPane.rightAnchor="3"
+                    onAction="#addClient"/>
+        </AnchorPane>
+
+        <AnchorPane>
+            <Button text="Клиенты в работе" AnchorPane.leftAnchor="3" AnchorPane.rightAnchor="3"
+                    onAction="#getActiveClients"/>
+        </AnchorPane>
+
+        <AnchorPane>
+            <Button text="Архив" AnchorPane.leftAnchor="3" AnchorPane.rightAnchor="3"
+                    onAction="#getArchivedClients"/>
+        </AnchorPane>
+
+        <AnchorPane>
+            <Button text="Добавить заметку" AnchorPane.leftAnchor="3" AnchorPane.rightAnchor="3"
+                    onAction="#addNote" disable="true"/>
+        </AnchorPane>
+
+        <AnchorPane>
+            <Button text="Заметки" AnchorPane.leftAnchor="3" AnchorPane.rightAnchor="3"
+                    onAction="#getNotes" disable="true"/>
+        </AnchorPane>
+
+        <AnchorPane>
+            <Button text="Отчёт" AnchorPane.leftAnchor="3" AnchorPane.rightAnchor="3" disable="true"
+                    onAction="#reports"/>
+        </AnchorPane>
+
+
+        <ListView fx:id="notificationArea" VBox.vgrow="ALWAYS" disable="true"/>
+
+        <AnchorPane>
+            <Label fx:id="leftBottomLabel" alignment="BOTTOM_CENTER" AnchorPane.leftAnchor="1"
+                   AnchorPane.rightAnchor="1" AnchorPane.bottomAnchor="0" prefHeight="30"/>
+        </AnchorPane>
+    </VBox>
+</AnchorPane>

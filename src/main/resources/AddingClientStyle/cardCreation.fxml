@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<?import jfxtras.scene.control.LocalDatePicker?>
+<VBox fx:id="creationVBox" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="DesktopClient.Controllers.CardCreationController">
+
+    <stylesheets>
+        <URL value="@cardCreationStyle.css"/>
+    </stylesheets>
+
+    <!--Верхняя панель с кнопкой "закрыть"-->
+    <HBox id="topControlPanel" alignment="TOP_RIGHT" maxHeight="20" VBox.vgrow="ALWAYS">
+        <Button id="closeButton" maxWidth="50" minWidth="50" onAction="#closeWindow" text="close"/>
+    </HBox>
+
+    <VBox fx:id="creationBody" VBox.vgrow="ALWAYS" spacing="3">
+        <!--Назначить предпочитаемую высоту главного окна, в соответствии с которой, высота внутренних-->
+        <!--объектов будет соответствовать нужному значению. Сохранит адаптивный интерфейс-->
+        <HBox alignment="CENTER">
+            <Label text="ФИО:" minWidth="70" prefWidth="70" maxWidth="100" id="label"/>
+            <TextArea HBox.hgrow="ALWAYS"/>
+        </HBox>
+        <HBox alignment="CENTER">
+            <Label text="Адрес:" minWidth="70" prefWidth="70" maxWidth="100" id="label"/>
+            <TextArea HBox.hgrow="ALWAYS"/>
+        </HBox>
+        <HBox alignment="CENTER">
+            <Label text="Телефон:" minWidth="70" prefWidth="70" maxWidth="100" id="label"/>
+            <TextArea HBox.hgrow="ALWAYS"/>
+        </HBox>
+        <HBox alignment="CENTER">
+            <Label text="E-mail:" minWidth="70" prefWidth="70" maxWidth="100" id="label"/>
+            <TextArea HBox.hgrow="ALWAYS"/>
+        </HBox>
+        <HBox alignment="CENTER">
+            <Button text="Ответственный отдел" HBox.hgrow="ALWAYS"/>
+            <DatePicker promptText="Согласовано" HBox.hgrow="ALWAYS" editable="false"/>
+        </HBox>
+        <ListView VBox.vgrow="ALWAYS"/>
+        <HBox>
+            <TextField promptText="Комментарий" HBox.hgrow="ALWAYS" fx:id="textField"/>
+            <Button text="Добавить" fx:id="sendButton"/>
+        </HBox>
+    </VBox>
+</VBox>

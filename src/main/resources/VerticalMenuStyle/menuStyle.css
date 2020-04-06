@@ -1,0 +1,14 @@
+#notificationArea{
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+#leftMenuVBox{
+    -fx-background-color: #e4e4e4;
+}
+
+#leftBottomLabel{
+    -fx-border-radius: 5 5 0 0;
+    -fx-background-radius: 5 5 0 0;
+    -fx-background-color: #f9f9f9;
+}

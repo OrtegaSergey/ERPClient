@@ -1,0 +1,76 @@
+.root{
+    -fx-border-radius: 20 20 0 0;
+    -fx-background-radius: 20 20 0 0;
+}
+
+#topControlPanel{
+    -fx-border-radius: 20 20 0 0;
+    -fx-background-radius: 20 20 0 0;
+    -fx-background-color: #eabd3b;
+}
+
+#mainBorderPane{
+    -fx-border-width: 0 3 3 3;
+    -fx-border-color: #eabd3b;
+}
+
+#leftMenuVBox{
+    -fx-border-width: 0 2 0 0;
+    -fx-border-color: #eabd3b;
+}
+
+#tableViewAnchor{
+}
+
+#closeButton{
+    -fx-background-radius: 0 20 0 0;
+}
+
+#closeButton:hover{
+    -fx-background-color: #ff5018;
+}
+
+#menu{
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #eabd3b;
+}
+
+#authPanel{
+    -fx-background-image: url("/Style/orange.jpg");
+}
+
+#authLoginField{
+    -fx-border-width: 1;
+    -fx-background-radius: 5 5 0 0;
+    -fx-border-radius: 5 5 0 0;
+    -fx-border-color: #b3b3b3;
+}
+
+#authPasswordField{
+    -fx-border-width: 1;
+    -fx-background-radius: 0 0 5 5;
+    -fx-border-radius: 0 0 5 5;
+    -fx-border-color: #b3b3b3;
+}
+
+#authButton{
+    -fx-background-radius: 5 5 5 5;
+    -fx-border-radius: 5 5 5 5;
+}
+
+#authRegisterButton{
+    -fx-background-radius: 5 5 5 5;
+    -fx-border-radius: 5 5 5 5;
+}
+
+#alertAuthLabel{
+    -fx-background-color: transparent;
+}
+
+#alertRegistrationLabel{
+    -fx-background-color: transparent;
+}
+
+#registrationPanel{
+    -fx-background-image: url("/Style/orange.jpg");
+}

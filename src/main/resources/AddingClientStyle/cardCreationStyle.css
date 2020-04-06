@@ -1,0 +1,52 @@
+.root{
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+}
+
+.scene{
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+}
+
+#creationVBox{
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+}
+
+#creationBody{
+    -fx-border-width: 3;
+    -fx-border-radius: 0 0 20 20;
+    -fx-border-color: #eabd3b;
+    -fx-padding: 1;
+}
+
+#topControlPanel{
+    -fx-border-radius: 20 20 0 0;
+    -fx-background-radius: 20 20 0 0;
+    -fx-background-color: #eabd3b;
+}
+
+#closeButton{
+    -fx-background-radius: 0 20 0 0;
+}
+
+#closeButton:hover{
+    -fx-background-color: #ff5018;
+}
+
+#label{
+    -fx-alignment: CENTER;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+}
+
+#textField{
+    -fx-background-radius: 0 0 0 20;
+    -fx-border-radius: 0 0 0 20;
+}
+
+#sendButton{
+    -fx-background-radius: 0 0 20 0;
+    -fx-border-radius: 0 0 20 0;
+}
